@@ -92,6 +92,7 @@ header {
             margin-left: 35px;
             line-height: 21px;
             padding-top: 3px;
+            position: relative;
             .text {
                 display: table-cell;
                 vertical-align: middle;
@@ -111,9 +112,35 @@ header {
                     border-right: 7px solid transparent;
                     border-top: 7px solid #fff;
                 }
+                &:hover + .drop-down {
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
             &:first-child {
                 margin-left: 0;
+            }
+            .drop-down {
+                position: absolute;
+                right: -8px;
+                visibility: hidden;
+                opacity: 0;
+                top: 51px;
+                background: $lighter-green-bg;
+                width: 200px;
+                font-size: 12px;
+                z-index: 4;
+                border-bottom: 1px solid $green-bg;
+                @include transition(all 0.4s);
+                li {
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    border-top: 1px solid $green-bg;
+                }
+                &:hover {
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
         }
     }

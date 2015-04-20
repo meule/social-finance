@@ -14,12 +14,15 @@ $(document).ready(function () {
         intervention_and_measurment: 'The One* Service...',
         financial_details: 'Investors receive outcomes...',
         the_case_for_a_sib: 'The total one-off cost...',
-        performance: 'Results from the independent...'
+        performance: 'Results from the independent...',
+        short_sentence: '3 000',
+        impact_bonds: '10',
+        lives_changed: '10'
     }
 
 
     // hide/show contents
-    $(".content").hide().eq(2).show();
+    $(".content").hide().eq(0).show();
 
     var contentHideShow = function (showContent) {
         $(".content").hide().eq(showContent).show();

@@ -35,28 +35,48 @@
                         ISSUE
                         <br>AREA
                     </div>
+                    <ul class="drop-down">
+                        <li>some filter one</li>
+                        <li>some filter two</li>
+                    </ul>
                 </div>
                 <div class="filter">
                     <div class="text">
                         DEVELOPMENT
                         <br>STAGE
                     </div>
+                    <ul class="drop-down">
+                        <li>some filter one</li>
+                        <li>some filter two</li>
+                    </ul>
                 </div>
                 <div class="filter">
                     <div class="text">
                         INVESTOR
                     </div>
+                    <ul class="drop-down">
+                        <li>some filter one</li>
+                        <li>some filter two</li>
+                    </ul>
                 </div>
                 <div class="filter">
                     <div class="text">
                         PAYER
                     </div>
+                    <ul class="drop-down">
+                        <li>some filter one</li>
+                        <li>some filter two</li>
+                    </ul>
                 </div>
                 <div class="filter">
                     <div class="text">
                         SERVICE
                         <br>PROVIDER
                     </div>
+                    <ul class="drop-down">
+                        <li>some filter one</li>
+                        <li>some filter two</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -64,7 +84,7 @@
             <ul class="statistics clearfix">
                 <li>
                     <p class="number">
-                        40
+                        {{ impact_bonds }}
                     </p>
                     <p class="text">
                         IMPACT BONDS
@@ -80,7 +100,7 @@
                 </li>
                 <li>
                     <p class="number">
-                        18<span>K</span>
+                        {{ lives_changed }}<span>K</span>
                     </p>
                     <p class="text">
                         LIVES CHANGED
@@ -108,7 +128,7 @@
             <ul class="statistics clearfix">
                 <li>
                     <p class="number">
-                        10
+                        {{ impact_bonds }}
                     </p>
                     <p class="text">
                         IMPACT BONDS
@@ -124,7 +144,7 @@
                 </li>
                 <li>
                     <p class="number">
-                        9<span>K</span>
+                        {{ lives_changed }}<span>K</span>
                     </p>
                     <p class="text">
                         LIVES CHANGED
@@ -205,7 +225,7 @@
                     </li>
                     <li>
                         <p class="number">
-                            3,000
+                            {{ short_sentence }}
                         </p>
                         <p class="text">
                             SHORT SENTANCE OFFENERS IMPACTED
