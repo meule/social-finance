@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Impuls</title>
+    <title>
+        <?php bloginfo ( 'name'); ?>
+    </title>
     <link href="<?php bloginfo ('template_url'); ?>/css/main.css" rel="stylesheet">
     <script src="<?php bloginfo ('template_url'); ?>/js/jquery-1.7.2.min.js"></script>
     <script src="<?php bloginfo ('template_url'); ?>/js/d3.min.js"></script>
@@ -58,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <div class="contant clearfix">
+        <div class="content clearfix">
             <ul class="statistics clearfix">
                 <li>
                     <p class="number">
@@ -70,7 +72,7 @@
                 </li>
                 <li>
                     <p class="number">
-                        11<span>M</span>
+                        {{ capital_raised }}<span>M</span>
                     </p>
                     <p class="text">
                         $ CAPITAL RAISED
@@ -89,22 +91,20 @@
                 <div class="chart"></div>
                 <h5>ISSUE AREA</h5>
                 <div class="description">
-                    UNEMPLOYMENT / NEETS 8 PROJECTS
+                    {{ issue_area }}
                 </div>
             </div>
             <div class="news-list">
                 <h3>LATEST NEWS</h3>
                 <div class="news-item">
-                    <h4>PETERBOROUGH SIB UPDATE</h4>
-                    <div class="date">JUNE 10, 2015</div>
+                    <h4>{{ project_name }}</h4>
+                    <div class="date">{{ launch_date }}</div>
                     <a href="#">LEARN MORE</a>
-                    <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra, tellus et lobortis efficitur, massa mauris tristique tellus, et sollicitudin lectus urna sit amet risus. Praesent placerat imperdiet sem. Nullam commodo eu nibh et accumsan. Donec porta nunc nibh, quis fermentum nunc rutrum ut. Duis vehicula turpis erat, nec placerat mi pellentesque eu. Mauris a quam id ipsum bibendum finibus sit amet ut neque. Cras at malesuada justo.
-                    </div>
+                    <div class="text">{{ project_overview }}</div>
                 </div>
             </div>
         </div>
-        <div class="contant clearfix">
+        <div class="content clearfix">
             <ul class="statistics clearfix">
                 <li>
                     <p class="number">
@@ -116,7 +116,7 @@
                 </li>
                 <li>
                     <p class="number">
-                        5<span>M</span>
+                        {{ capital_raised }}<span>M</span>
                     </p>
                     <p class="text">
                         $ CAPITAL RAISED
@@ -131,30 +131,115 @@
                     </p>
                 </li>
             </ul>
-
             <div class="chart-wrap">
                 <div class="chart"></div>
                 <h5>ISSUE AREA</h5>
                 <div class="description">
-                    UNEMPLOYMENT / NEETS 8 PROJECTS
+                    {{ issue_area }}
                 </div>
             </div>
             <div class="news-list">
                 <h3>RECENT PROJECTS</h3>
                 <div class="news-item">
-                    <h4>PETERBOROUGH SIB</h4>
-                    <div class="date">CAPITAL RAISED: $5 M</div>
-                    <a href="#">CRIMINAL JUSTICE</a>
+                    <h4>{{ project_name }}</h4>
+                    <div class="date">CAPITAL RAISED: {{ capital_raised }} M</div>
+                    <a href="#">{{ issue_area }}</a>
                     <div class="text">
-                        Aims to reduce reoffending rates of short sentence offenders. The Ministry of Justice are outcomes funders, investors are a group of 10 charitable foundations based in the UK, Europe and the US, with Social Finance acting as intermediary.
+                        {{ project_overview }}
                     </div>
                 </div>
                 <div class="news-item">
-                    <h4>PETERBOROUGH SIB</h4>
-                    <div class="date">CAPITAL RAISED: $5 M</div>
-                    <a href="#">CRIMINAL JUSTICE</a>
+                    <h4>{{ project_name }}</h4>
+                    <div class="date">CAPITAL RAISED: {{ capital_raised }} M</div>
+                    <a href="#">{{ issue_area }}</a>
                     <div class="text">
-                        Aims to reduce reoffending rates of short sentence offenders. The Ministry of Justice are outcomes funders, investors are a group of 10 charitable foundations based in the UK, Europe and the US, with Social Finance acting as intermediary.
+                        {{ project_overview }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content clearfix">
+            <div class="left">
+                <h3>{{ project_name }}</h3>
+                <a href="#">{{ issue_area }}</a>
+                <div class="item">
+                    <h5>LAUNCH DATE</h5>
+                    <div class="text">
+                        {{ launch_date }}
+                    </div>
+                </div>
+                <div class="item">
+                    <h5>DURATION</h5>
+                    <div class="text">
+                        {{ project_duration }} YEARS
+                    </div>
+                </div>
+                <div class="item">
+                    <h5>MAX OUTCOME PAYMENTS</h5>
+                    <div class="text">
+                        {{ max_outcomes_payments }} PAYMENTS
+                    </div>
+                </div>
+                <div class="item">
+                    <h5>INVESTORS</h5>
+                    <div class="text">
+                        {{ investors }}
+                    </div>
+                </div>
+                <div class="item">
+                    <h5>OUTCOMES FUNDER</h5>
+                    <div class="text">
+                        {{ outcomes_funder }}
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <ul class="statistics clearfix">
+                    <li>
+                        <p class="number">
+                            {{ capital_raised }}<span>M</span>
+                        </p>
+                        <p class="text">
+                            $ CAPITAL RAISED
+                        </p>
+                    </li>
+                    <li>
+                        <p class="number">
+                            3,000
+                        </p>
+                        <p class="text">
+                            SHORT SENTANCE OFFENERS IMPACTED
+                        </p>
+                    </li>
+                </ul>
+                <div class="item">
+                    <h4>PROJECT OVERVIEW</h4>
+                    <div class="text">
+                        {{ project_overview }}
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>INTERVENTION & MEASUREMENT</h4>
+                    <div class="text">
+                        {{ intervention_and_measurment }}
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>FINANCIAL DETAILS</h4>
+                    <div class="text">
+                        {{ financial_details }}
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>THE CASE FOR A SIB</h4>
+                    <div class="text">
+                        {{ the_case_for_a_sib }}
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>PERFORMANCE</h4>
+                    <div class="text">
+                        {{ performance }}
                     </div>
                 </div>
             </div>

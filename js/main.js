@@ -1,12 +1,29 @@
 $(document).ready(function () {
 
-    // hide/show contants
-    $(".contant").hide().eq(0).show();
+    // data
+    var context = {
+        project_name: 'PETERBOROUGH SIB UPDATE',
+        launch_date: 'JUNE 10, 2015',
+        project_overview: 'Lorem ipsum dolor...',
+        capital_raised: '5',
+        issue_area: 'Criminal Justice',
+        investors: 'Barrow Cadbury Trust, Esmee Fairburn Foundation, Friends Provident Foundation, The Henry Smith Charity, Johansson Family Foundation, LankellyChase Foundation, The Monument Trust, Panaphur, Paul Hamlyn Foundation, Tudor Trust',
+        max_outcomes_payments: '8',
+        outcomes_funder: 'Ministry of Justice, Big Society Capital',
+        project_duration: '5',
+        intervention_and_measurment: 'The One* Service...',
+        financial_details: 'Investors receive outcomes...',
+        the_case_for_a_sib: 'The total one-off cost...',
+        performance: 'Results from the independent...'
+    }
 
-    var showContant = 0,
-        contantHideShow = function () {
-            $(".contant").hide().eq(showContant).show();
-        }
+
+    // hide/show contents
+    $(".content").hide().eq(2).show();
+
+    var contentHideShow = function (showContent) {
+        $(".content").hide().eq(showContent).show();
+    }
 
 
     // chart
