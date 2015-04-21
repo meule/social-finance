@@ -61,6 +61,117 @@ header {
     }
 }
 
+.map {
+    position: relative;
+    min-height: 641px;
+    .search-wrap {
+        position: absolute;
+        top: 21px;
+        right: 23px;
+        input {
+            width: 265px;
+            font-size: 27px;
+            border: none;
+            background: #e1dedd;
+            padding: 4px 12px;
+            z-index: 1;
+            outline: none;
+            color: #686566;
+        }
+    }
+    .reset-btn {
+        background: #e1dedd;
+        position: absolute;
+        bottom: 15px;
+        right: 11px;
+        padding: 6px 66px;
+        color: #080808;
+        cursor: pointer;
+        font-weight: bold;
+        z-index: 1;
+    }
+    .filter {
+        position: absolute;
+        z-index: 1;
+        bottom: 14px;
+        left: 16px;
+        border: 2px solid #fff;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 2px;
+        li {
+            background: $lighter-green-bg;
+            padding: 5px 0;
+            width: 180px;
+            border-top: 2px solid #fff;
+            cursor: pointer;
+            &:first-child {
+                border: none;
+            }
+            &.active {
+                background: $green-bg;
+            }
+        }
+    }
+    .popup {
+        background: $green-bg;
+        padding: 11px 56px 11px 15px;
+        position: absolute;
+        color: #fff;
+        text-transform: uppercase;
+        .title {
+            margin-bottom: 10px;
+            font-size: 26px;
+            letter-spacing: -1.4px;
+        }
+        &.projects-list {
+            top: 271px;
+            left: 259px;
+            &:after {
+                content: '';
+                position: absolute;
+                right: -13px;
+                top: 30%;
+                margin-top: -7px;
+                border-top: 12px solid transparent;
+                border-left: 14px solid #7ea02f;
+                border-bottom: 12px solid transparent;
+            }
+        }
+        ul {
+            font-size: 19px;
+            line-height: 25px;
+        }
+        h4 {
+            font-size: 24px;
+            margin-bottom: 13px;
+        }
+        .issue-area {
+            font-style: italic;
+            font-size: 20px;
+        }
+        .provider {
+            font-size: 20px;
+            margin-top: 5px;
+        }
+        &.project {
+            top: 154px;
+            left: 199px;
+            padding: 11px 15px 15px 15px;
+            &:after {
+                content: '';
+                position: absolute;
+                right: -13px;
+                top: 50%;
+                margin-top: -12px;
+                border-top: 12px solid transparent;
+                border-left: 14px solid #7ea02f;
+                border-bottom: 12px solid transparent;
+            }
+        }
+    }
+}
+
 .filters {
     background: $lighter-green-bg;
     color: #fff;
@@ -232,9 +343,9 @@ header {
 .statistics {
     margin: 35px 0 96px;
     li {
-        width: 220px;
+        width: 295px;
         float: left;
-        margin: 0 40px;
+        margin: 0 2px;
         text-align: center;
         .text {
             font-size: 26px;
@@ -247,6 +358,11 @@ header {
             margin-bottom: 14px;
             span {
                 font-size: 43px;
+            }
+            .symbol {
+                position: relative;
+                top: -30px;
+                font-size: 50px;
             }
         }
     }

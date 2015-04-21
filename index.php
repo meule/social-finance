@@ -26,7 +26,30 @@
         <div class="page-title clearfix">
             <h2>NEWS & VIEWS</h2>
         </div>
-        <div class="map" style="height: 641px;">Map will be here!</div>
+        <div class="map">
+            <div class="search-wrap">
+                <input type="search" placeholder="SEARCH">
+            </div>
+            <div class="reset-btn">RESET</div>
+            <ul class='filter'>
+                <li>ACTIVE</li>
+                <li>COMPLETE</li>
+                <li>IN DEVELOPMENT</li>
+            </ul>
+            <div class="popup projects-list">
+                <div class="title">SELECT PROJECT</div>
+                <ul>
+                    {{#each context}}
+                    <li>{{ project_name }}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="popup project">
+                <h4>{{ project_name }}</h4>
+                <div class="issue-area">{{ issue_area }}</div>
+                <div class="provider">{{ service_provider }}</div>
+            </div>
+        </div>
         <div class="filters clearfix">
             <div class="title">CURRENT FILTERS</div>
             <div class="filters-wrap">
@@ -36,8 +59,9 @@
                         <br>AREA
                     </div>
                     <ul class="drop-down">
-                        <li>some filter one</li>
-                        <li>some filter two</li>
+                        {{#each issue_area_filter}}
+                        <li>{{ filter }}</li>
+                        {{/each}}
                     </ul>
                 </div>
                 <div class="filter">
@@ -92,15 +116,15 @@
                 </li>
                 <li>
                     <p class="number">
-                        {{ capital_raised }}<span>M</span>
+                        <span class="symbol">£</span>{{ capital_raised }}<span>M</span>
                     </p>
                     <p class="text">
-                        $ CAPITAL RAISED
+                        CAPITAL RAISED
                     </p>
                 </li>
                 <li>
                     <p class="number">
-                        {{ lives_changed }}<span>K</span>
+                        18 000<span>K</span>
                     </p>
                     <p class="text">
                         LIVES CHANGED
@@ -136,10 +160,10 @@
                 </li>
                 <li>
                     <p class="number">
-                        {{ capital_raised }}<span>M</span>
+                        <span class="symbol">£</span>{{ capital_raised }}<span>M</span>
                     </p>
                     <p class="text">
-                        $ CAPITAL RAISED
+                        CAPITAL RAISED
                     </p>
                 </li>
                 <li>
@@ -159,7 +183,7 @@
                 </div>
             </div>
             <div class="news-list">
-                <h3>RECENT PROJECTS</h3>
+                <h3>RECENT PROJECTS</h3> {{#each context}}
                 <div class="news-item">
                     <h4>{{ project_name }}</h4>
                     <div class="date">CAPITAL RAISED: {{ capital_raised }} M</div>
@@ -176,6 +200,7 @@
                         {{ project_overview }}
                     </div>
                 </div>
+                {{/each}}
             </div>
         </div>
         <div class="content clearfix">
@@ -228,7 +253,7 @@
                             {{ short_sentence }}
                         </p>
                         <p class="text">
-                            SHORT SENTANCE OFFENERS IMPACTED
+                            SHORT SENTANCE OFFENERS
                         </p>
                     </li>
                 </ul>

@@ -7,6 +7,7 @@ $(document).ready(function () {
         project_overview: 'Lorem ipsum dolor...',
         capital_raised: '5',
         issue_area: 'Criminal Justice',
+        service_provider: 'The One Service',
         investors: 'Barrow Cadbury Trust, Esmee Fairburn Foundation, Friends Provident Foundation, The Henry Smith Charity, Johansson Family Foundation, LankellyChase Foundation, The Monument Trust, Panaphur, Paul Hamlyn Foundation, Tudor Trust',
         max_outcomes_payments: '8',
         outcomes_funder: 'Ministry of Justice, Big Society Capital',
@@ -20,9 +21,32 @@ $(document).ready(function () {
         lives_changed: '10'
     }
 
+    var issue_area_filter = [
+        {
+            filter: "option1"
+        },
+        {
+            filter: "option2"
+        },
+        {
+            filter: "option3"
+        },
+        {
+            filter: "clearFilter"
+        }
+    ]
+
+
+    // map filter
+    $(".map .filter li").toggle(function () {
+        $(this).addClass('active');
+    }, function () {
+        $(this).removeClass('active');
+    });
+
 
     // hide/show contents
-    $(".content").hide().eq(0).show();
+    $(".content").hide().eq(1).show();
 
     var contentHideShow = function (showContent) {
         $(".content").hide().eq(showContent).show();
