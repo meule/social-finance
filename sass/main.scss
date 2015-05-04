@@ -315,6 +315,7 @@ header {
             margin: 45px 0 25px;
             li {
                 margin: 0 30px 0 0;
+                width: 244px;
                 .number {
                     font-size: 63px;
                     margin-bottom: 10px;
@@ -322,6 +323,9 @@ header {
                 .text {
                     font-size: 22px;
                     line-height: 24px;
+                }
+                &:last-child {
+                    margin-right: 0;
                 }
             }
         }
