@@ -4,6 +4,25 @@
 @import "compass/reset";
 /** Variables **/
 
+/** Add fonts **/
+@mixin font-face($style-name, $file, $folder) {
+    $filepath: "../fonts/" + $folder + "/" + $file;
+    @font-face {
+        font-family: "#{$style-name}";
+        src: url($filepath + ".eot");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
+             url($filepath + ".woff") format('woff'),
+             url($filepath + ".ttf")  format('truetype'),
+             url($filepath + ".svg#" + $style-name + "") format('svg');
+        font-weight: normal;
+    }
+
+}
+@include font-face("Avenir Next", "avenir", "Avenir Next");
+@include font-face("Avenir Next Demi Bold", "avenir_bold", "Avenir Next Demi Bold");
+@include font-face("Avenir Next Medium", "avenir_medium", "Avenir Next Medium");
+@include font-face("Averir Next Ultra Light", "avenir_light", "Averir Next Ultra Light");
+
 $gray-bg: #f5f9f8;
 $green-bg: #7ea02f;
 $lighter-green-bg: #b1bd7b;
@@ -19,7 +38,7 @@ body {
     height: 100%;
     width: 100%;
     position: relative;
-    font-family: Arial, sans-serif;
+    font-family: "Avenir Next", Arial, sans-serif;
 }
 
 .clearfix {
@@ -56,8 +75,9 @@ header {
         padding: 11px 40px 10px 29px;
         float: right;
         font-size: 26px;
-        letter-spacing: -0.5px;
-        margin-right: 109px;
+        letter-spacing: -1px;
+        margin-right: 112px;
+        font-family: "Avenir Next Demi Bold", Arial, sans-serif;
     }
 }
 
@@ -76,7 +96,8 @@ header {
             padding: 4px 12px;
             z-index: 1;
             outline: none;
-            color: #686566;
+            color: #231f20;
+            font-family: "Averir Next Ultra Light", Arial, sans-serif;
         }
     }
     .reset-btn {
@@ -87,8 +108,10 @@ header {
         padding: 6px 66px;
         color: #080808;
         cursor: pointer;
-        font-weight: bold;
+        font-size: 20px;
+        letter-spacing: 1.5px;
         z-index: 1;
+        font-family: "Avenir Next Medium", Arial, sans-serif;
     }
     .filter {
         position: absolute;
@@ -105,6 +128,7 @@ header {
             width: 180px;
             border-top: 2px solid #fff;
             cursor: pointer;
+            font-family: "Avenir Next Medium", Arial, sans-serif;
             &:first-child {
                 border: none;
             }
@@ -123,6 +147,7 @@ header {
             margin-bottom: 10px;
             font-size: 26px;
             letter-spacing: -1.4px;
+            font-family: "Avenir Next Medium", Arial, sans-serif;
         }
         &.projects-list {
             top: 271px;
@@ -145,6 +170,7 @@ header {
         h4 {
             font-size: 24px;
             margin-bottom: 13px;
+            font-family: "Avenir Next Medium", Arial, sans-serif;
         }
         .issue-area {
             font-style: italic;
@@ -153,6 +179,7 @@ header {
         .provider {
             font-size: 20px;
             margin-top: 5px;
+            font-family: "Averir Next Ultra Light", Arial, sans-serif;
         }
         &.project {
             top: 154px;
@@ -175,6 +202,7 @@ header {
 .filters {
     background: $lighter-green-bg;
     color: #fff;
+    font-family: "Avenir Next Medium", Arial, sans-serif;
     .title {
         float: left;
         background: $green-bg;
@@ -270,6 +298,7 @@ header {
             font-size: 28px;
             margin-top: 43px;
             position: relative;
+            font-family: "Avenir Next Demi Bold", Arial, sans-serif;
             &:after {
                 content: '';
                 width: 0;
@@ -301,6 +330,7 @@ header {
             h5 {
                 font-size: 21px;
                 margin-bottom: 13px;
+                font-family: "Avenir Next Medium", Arial, sans-serif;
             }
             .text {
                 line-height: 24px;
@@ -335,6 +365,7 @@ header {
             h4 {
                 font-size: 24px;
                 margin-bottom: 16px;
+                font-family: "Avenir Next Medium", Arial, sans-serif;
             }
             .text {
                 font-size: 21px;
@@ -353,13 +384,13 @@ header {
         text-align: center;
         .text {
             font-size: 26px;
-            letter-spacing: -1.3px;
+            font-family: "Averir Next Ultra Light", Arial, sans-serif;
         }
         .number {
             color: $blue-text;
             font-size: 85px;
-            font-weight: bold;
             margin-bottom: 14px;
+            font-family: "Avenir Next Demi Bold", Arial, sans-serif;
             span {
                 font-size: 43px;
             }
@@ -385,11 +416,13 @@ header {
         margin-top: 29px;
         letter-spacing: -1.7px;
         font-size: 26px;
+        font-family: "Averir Next Ultra Light", Arial, sans-serif;
     }
     .description {
         margin-top: 16px;
         font-size: 25px;
         line-height: 30px;
+        font-family: "Avenir Next Medium", Arial, sans-serif;
     }
 }
 
@@ -406,6 +439,7 @@ header {
         font-size: 32px;
         margin-bottom: 39px;
         position: relative;
+        font-family: "Avenir Next Demi Bold", Arial, sans-serif;
         &:after {
             content: '';
             position: absolute;
@@ -429,6 +463,7 @@ header {
         font-size: 25px;
         letter-spacing: -0.4px;
         color: #000;
+        font-family: "Avenir Next Demi Bold", Arial, sans-serif;
     }
     .date {
         margin-top: 10px;
