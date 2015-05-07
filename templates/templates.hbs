@@ -1,0 +1,278 @@
+<!--#?main-->
+	<div class="map">
+		<div id="mapmap"></div>
+		<div class="search-wrap">
+			<input type="search" placeholder="SEARCH">
+		</div>
+		<div class="reset-btn">RESET</div>
+		<ul class='filter map-filter'>
+			<li id="filter_status_active" class="active">ACTIVE</li>
+			<li id="filter_status_complete" class="active">COMPLETE</li>
+			<li id="filter_status_development" class="active">IN DEVELOPMENT</li>
+		</ul>
+		<div class="map-controls"></div>
+	</div>
+	<div class="filters clearfix"></div>
+	<div class="content clearfix"></div>
+<!--#?end-->
+
+<!--#?mapprojects-->
+	<div class="popupWrapper">
+		<div class="popup projects-list">
+			<div class="title">SELECT PROJECT</div>
+			<ul>
+				{{#each this}}
+				<li id="project_index_{{@index}}">{{ project_name }}</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+<!--#?end-->
+
+<!--#?mapproject-->
+	<div class="popupWrapper">
+		<div class="popup project">
+			<h4>{{ project_name }}</h4>
+			<div class="issue-area">{{ issue_area }}</div>
+			<div class="provider">{{ service_provider }}</div>
+		</div>
+	</div>
+<!--#?end-->
+
+<!--#?project-->
+    <div class="left">
+        <h3>{{ project_name }}</h3>
+        <a href="#">{{ issue_area }}</a>
+        <div class="item">
+            <h5>LAUNCH DATE</h5>
+            <div class="text">
+                {{ launch_date }}
+            </div>
+        </div>
+        <div class="item">
+            <h5>DURATION</h5>
+            <div class="text">
+                {{ project_duration_years }} YEARS
+            </div>
+        </div>
+        <div class="item">
+            <h5>MAX OUTCOME PAYMENTS</h5>
+            <div class="text">
+                {{ max_outcomes_payments }} PAYMENTS
+            </div>
+        </div>
+        <div class="item">
+            <h5>INVESTORS</h5>
+            <div class="text">
+                {{ investors }}
+            </div>
+        </div>
+        <div class="item">
+            <h5>OUTCOMES FUNDER</h5>
+            <div class="text">
+                {{ outcomes_funder }}
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <ul class="statistics clearfix">
+            <li>
+	            <p class="number">
+	                <span class="symbol">{{ field_8 }}</span>{{ capital_raised_m }}<span>M</span>
+	            </p>
+	            <p class="text">
+	                CAPITAL RAISED
+	            </p>
+            </li>
+            <li>
+                <p class="number">
+                    {{ __people }}
+                </p>
+                <p class="text">
+                    {{changing_lives_for}}
+                </p>
+            </li>
+        </ul>
+        <div class="item">
+            <h4>PROJECT OVERVIEW</h4>
+            <div class="text">
+                {{ project_overview }}
+            </div>
+        </div>
+        <div class="item">
+            <h4>INTERVENTION & MEASUREMENT</h4>
+            <div class="text">
+                {{ intervention_and_outcomes_metrics }}
+            </div>
+        </div>
+        <div class="item">
+            <h4>FINANCIAL DETAILS</h4>
+            <div class="text">
+                {{ financial_terms }}
+            </div>
+        </div>
+        <div class="item">
+            <h4>THE CASE FOR A SIB</h4>
+            <div class="text">
+                {{ the_social_value_and_economic_case }}
+            </div>
+        </div>
+        <div class="item">
+            <h4>PERFORMANCE</h4>
+            <div class="text">
+                {{ performance }}
+            </div>
+        </div>
+    </div>
+<!--#?end-->
+
+<!--#?projects-->
+    <ul class="statistics clearfix">
+        <li>
+            <p class="number">
+                {{ impact_bonds }}
+            </p>
+            <p class="text">
+                IMPACT BONDS
+            </p>
+        </li>
+        <li>
+            <p class="number">
+                <span class="symbol">{{ field_8 }}</span>{{ capital_raised_m }}<span>M</span>
+            </p>
+            <p class="text">
+                CAPITAL RAISED
+            </p>
+        </li>
+        <li>
+            <p class="number">
+                {{ lives_changed }}<span>K</span>
+            </p>
+            <p class="text">
+                LIVES CHANGED
+            </p>
+        </li>
+    </ul>
+    <div class="chart-wrap">
+        <div class="chart"></div>
+        <h5></h5>
+        <div class="description"></div>
+    </div>
+    <div class="news-list">
+        <h3>RECENT PROJECTS</h3> 
+        {{#each recent}}
+	        <div class="news-item">
+	            <h4>{{ project_name }}</h4>
+	            <div class="date">CAPITAL RAISED: {{ capital_raised_m }} M</div>
+	            <a href="#">{{ issue_area }}</a>
+	            <div class="text">
+	                {{ project_overview }}
+	            </div>
+	        </div>
+        {{/each}}
+    </div>
+<!--#?end-->
+
+<!--#?countries-->
+    <ul class="statistics clearfix">
+        <li>
+            <p class="number">
+                {{ impact_bonds }}
+            </p>
+            <p class="text">
+                IMPACT BONDS
+            </p>
+        </li>
+        <li>
+            <p class="number">
+                <span class="symbol">$</span>{{ capital_raised_m }}<span>M</span>
+            </p>
+            <p class="text">
+                CAPITAL RAISED
+            </p>
+        </li>
+        <li>
+            <p class="number">
+                18 000<span>K</span>
+            </p>
+            <p class="text">
+                LIVES CHANGED
+            </p>
+        </li>
+    </ul>
+    <div class="chart-wrap">
+        <div class="chart"></div>
+        <h5></h5>
+        <div class="description"></div>
+    </div>
+    <div class="news-list">
+        <h3>LATEST NEWS</h3>
+        {{#each recent}}
+	        <div class="news-item">
+	            <h4>{{ project_name }}</h4>
+	            <div class="date">{{ launch_date }}</div>
+	            <a href="#">LEARN MORE</a>
+	            <div class="text">{{ project_overview }}</div>
+	        </div>
+	    {{/each}}
+    </div>
+<!--#?end-->
+
+<!--#?filters-->
+    <div class="title">CURRENT FILTERS</div>
+    <div class="filters-wrap">
+        <div class="filter">
+            <div class="text {{class.issue_area}}">
+                ISSUE
+                <br>AREA
+            </div>
+            <ul class="drop-down">
+                {{#each issue_area}}
+                	<li id="filter-{{ filterName }}-{{ optionId }}" class="{{class}}">{{ option }} ({{ number }})</li>
+                {{/each}}
+            </ul>
+        </div>
+        <!--div class="filter">
+            <div class="text {{class.development_stage}}">
+                DEVELOPMENT
+                <br>STAGE
+            </div>
+            <ul class="drop-down">
+                {{#each development_stage}}
+                	<li id="filter-{{ filterName }}-{{ optionId }}" class="{{class}}">{{ option }} ({{ number }})</li>
+                {{/each}}
+            </ul>
+        </div-->
+        <div class="filter">
+            <div class="text {{class.investors}}">
+                INVESTOR
+            </div>
+            <ul class="drop-down">
+                {{#each investors}}
+                	<li id="filter-{{ filterName }}-{{ optionId }}" class="{{class}}">{{ option }} ({{ number }})</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="filter">
+            <div class="text {{class.outcomes_funder}}">
+                PAYER
+            </div>
+            <ul class="drop-down">
+                {{#each outcomes_funder}}
+                	<li id="filter-{{ filterName }}-{{ optionId }}" class="{{class}}">{{ option }} ({{ number }})</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="filter">
+            <div class="text {{class.service_provider}}">
+                SERVICE
+                <br>PROVIDER
+            </div>
+            <ul class="drop-down">
+                {{#each service_provider}}
+                	<li id="filter-{{ filterName }}-{{ optionId }}" class="{{class}}">{{ option }} ({{ number }})</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+<!--#?end-->
