@@ -3,7 +3,7 @@
 
 //(function(){
 	
-	var	 dir = ''
+	var	 dir = window.ngoDir || ''
 		,insertAfter = '#mapScript'
 		,baseMapUrl = 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
 		,sqlUrl = 'http://socialfinanceuk.cartodb.com/api/v2/sql/?q='
@@ -542,7 +542,7 @@
 			console.log(rawData);
 			rawData = rawData.rows;
 		*/
-		d3.csv( 'ngo_projects_geo.csv' , function(error, rawData){
+		d3.csv( dir + 'ngo_projects_geo.csv' , function(error, rawData){
 			console.log(rawData);
 
 			data.projects = [];
@@ -596,13 +596,13 @@
 		map.countries = L.featureGroup();
 		map.countriesMap = {};
 
-		loadTopo(map,'js/world.topo.json',{
+		loadTopo(map,dir + 'js/world.topo.json',{
 				 continuousWorld: true
 				,onEachFeature: function (feature, layer) {
 					//layer.bindPopup(feature.properties.name);
 					var country;
 
-					console.log(feature.properties.NAME, feature.properties)
+					//console.log(feature.properties.NAME, feature.properties)
 
 					if (country = data.countries[feature.properties.NAME])
 						layer.country = feature.properties.NAME
